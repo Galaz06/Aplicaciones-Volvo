@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/buscador.css">
+    <title>Dashboard - Buscador</title>
+</head>
+<body>
+    <div class="dashboard-container">
+        <nav class="sidebar">
+            <header class="header-sidebar">
+                <div class="header-logo"><h3>MG</h3></div>
+                <div class="header-text">
+                    <h4>Matías Galaz</h4>
+                    <span>Programador</span>
+                </div>
+            </header>
+
+            <div class="menu-bar">
+                <ul class="menu-links">
+                    <li class="nav-link" id="first"><a href="index.html"><i class="bi bi-house"></i><span>Resumen</span></a></li>
+                    <li class="nav-link"><a href="#"><i class="bi bi-wifi"></i><span>Telemetria</span></a></li>
+                    <li class="nav-link"><a href="#"><i class="bi bi-mortarboard"></i><span>Academia</span></a></li>
+                    <li class="nav-link"><a href="#"><i class="bi bi-people"></i><span>Usuarios</span></a></li>
+                    <li class="nav-link"><a href="#"><i class="bi bi-gear"></i><span>Ajustes</span></a></li>
+                </ul>
+            </div>
+
+            <div class="nav-link logout">
+                <a href="#"><i class="bi bi-box-arrow-left"></i><span>Cerrar sesión</span></a>
+            </div>
+        </nav>
+
+        <main class="main">
+            <nav class="topbar-tabs">
+                <a href="index.html">Resumen</a>
+                <a href="buscador.html" class="active">Buscador</a>
+            </nav>
+
+            <div class="mode-tabs" role="tablist" id="modeTabs">
+                <button class="mode-tab active" role="tab" data-mode="clientes"><i class="bi bi-building"></i>Clientes</button>
+                <button class="mode-tab" role="tab" data-mode="flotas"><i class="bi bi-diagram-3"></i>Flotas</button>
+                <button class="mode-tab" role="tab" data-mode="unidades"><i class="bi bi-truck"></i>Unidades</button>
+            </div>
+
+            <section class="panel results-panel">
+                <div class="toolbar">
+                    <label class="search-box">
+                        <i class="bi bi-search"></i>
+                        <input type="search" id="searchInput" placeholder="Ingrese una razón social, rut, vin, etc" autocomplete="off">
+                    </label>
+                    <button class="btn btn-ghost btn-icon" id="filterBtn" type="button" aria-label="Filtros" title="Filtros">
+                        <i class="bi bi-funnel"></i>
+                    </button>
+                    <button class="btn btn-ghost btn-icon" id="sortBtn" type="button" aria-label="Ordenar" title="Ordenar por razón social">
+                        <i class="bi bi-sort-alpha-down"></i>
+                    </button>
+                </div>
+
+                <div class="results-meta">
+                    <span id="resultCount"></span>
+                    <span class="hint">Doble clic en una fila para ver el detalle</span>
+                </div>
+
+                <div class="list-head" id="listHead"></div>
+                <div class="list" id="list" role="list"></div>
+            </section>
+        </main>
+    </div>
+
+    <div class="modal-overlay" id="modal" hidden>
+        <div class="modal-wrap">
+            <button class="modal-close" id="modalClose" type="button" aria-label="Cerrar detalle"><i class="bi bi-x-lg"></i></button>
+            <div class="modal-card" id="modalCard" role="dialog" aria-modal="true"></div>
+        </div>
+    </div>
+
+    <script src="../js/buscador.js"></script>
+</body>
+</html>
